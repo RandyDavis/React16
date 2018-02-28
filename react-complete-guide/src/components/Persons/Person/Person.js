@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classes from './Person.css';
 import withClass from '../../../hoc/withClass';
 import Aux from '../../../hoc/Aux';
@@ -31,7 +32,13 @@ class Person extends Component{
         //     <input type="text" onChange={this.props.changed} value={this.props.name}  key="3" />
         // ]
     }
+}
 
+Person.propTypes = {
+    click: PropTypes.func,
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number.isRequired,
+    changed: PropTypes.func
 }
 
 export default withClass(Person, classes.Person);
